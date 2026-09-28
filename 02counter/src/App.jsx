@@ -5,20 +5,31 @@ import viteLogo from './assets/vite.svg'
 import './App.css'
 
 function App() {
+  let [counter,setCounter] =useState(15)
   
-let counter=15
+//let counter=15
 const addValue=() =>{
-  console.log("value added",Math.random());
+  
+ counter=counter+1
+ 
+setCounter(counter)  
 
+}
+const removeValue=() =>{ 
+  setCounter(counter-1)
 }
   return (
     <>
       <h1>chai aur react</h1>
       <h2>counter value :{counter} </h2>
-      <button onClick={addValue}>Add value</button>
+      <button onClick={addValue}> Add value {counter} </button>
       <br/>
-      <button>remove value  
+      <button
+        onClick={removeValue}>remove value  {counter}
       </button>
+      <p>fotter:{counter}
+
+      </p>
 
       </>
   )
